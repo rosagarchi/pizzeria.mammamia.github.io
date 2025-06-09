@@ -1,0 +1,146 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+
+.navbar-contenedor {
+  height: 60px;
+  background-color: rgb(40, 40, 40);
+  color: white;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+  padding: 0px 2rem;
+}
+
+.navbar-titulo {
+  margin-right: 1rem;
+  white-space: nowrap;
+  & span {
+    font-size: 20px;
+  }
+}
+
+.navbar-contenedor-botones {
+  display: flex;
+  gap: 10px;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* Header */
+
+.header-contenedor {
+  height: 230px;
+  background-image: url('./assets/imagenes/Header.jpg');
+  background-position: center;
+  position: relative;
+}
+
+.header-contenedor::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); 
+}
+
+.header-contenedor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & h1, span {
+    position: relative;
+  }
+}
+
+.header-contenedor-titulos {
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+  padding-bottom: 1rem;
+  width: 80%;
+}
+
+/* HOME */
+
+.home-contenedor {
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+.card-contenedor-botones {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-botones {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card-contenedor-precio {
+  border-top: 1px solid;
+  width: 100%;
+  text-align: center;
+  padding-top: 1rem;
+
+  & span {
+    font-size: large;
+    font-weight: bold;
+  }
+}
+
+.card-detalle {
+  text-align: center;
+  border-top: 1px solid;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 12px;
+}
+
+.card-titulo {
+  padding-bottom: 0.5rem;;
+}
+
+.footer-contenedor {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(40, 40, 40);
+  color: white;
+}
+
+.registro-contenedor {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario-registro {
+  width: 300px;
+  margin: 3rem;
+}
