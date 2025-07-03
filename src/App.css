@@ -144,3 +144,57 @@ html, body {
   width: 300px;
   margin: 3rem;
 }
+
+.imagen-carrito {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-pizza:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.contador {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.cantidad {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+  
+}
+
+.nombre {
+  font-size: 18px;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+  justify-content: baseline;
+  margin-bottom: 2.5rem;
+}
+
+.precio {
+  font-size: 18px;
+  font-weight: bold;
+  align-items:flex-end;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+
+.contenedor-precio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}

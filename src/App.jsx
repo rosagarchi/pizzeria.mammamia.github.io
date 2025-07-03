@@ -5,8 +5,10 @@ import NavBar from "./componentes/NavBar/NavBar";
 import Home from "./Home";
 import Footer from "./componentes/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Registro from "./Registro";
-import Login from "./Login";
+import Cart from "./Cart"
+
+//import Registro from "./Registro";
+//import Login from "./Login";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,7 +17,8 @@ function App() {
     <>
       <NavBar />
       {/*<Registro/>*/}
-      <Home />
+      {/*<Home />*/}
+      <Cart/>
       {/*<Login />*/}
       <Footer />
     </>
