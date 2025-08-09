@@ -2,10 +2,12 @@ import React, { useContext } from 'react'
 import { Row, Col, Container, Button } from 'react-bootstrap'
 import { pizzaCart } from '../assets/js/pizzas'
 import { CartContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext';
 
 export default function Cart() {
 
   const { total, cart, aumentar, disminuir } = useContext(CartContext);
+  const { token } = useContext(UserContext);
 
 
   return (
@@ -52,7 +54,7 @@ export default function Cart() {
 
         <Row>
             <Col>
-                <Button variant='dark'>Pagar</Button>
+                <Button variant='dark' disabled={!token}>Pagar</Button>
             </Col>
         </Row>
         

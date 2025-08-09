@@ -3,9 +3,11 @@ import Button from "react-bootstrap/Button";
 import { formatoMoneda } from "../../utils/utils";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
-export default function NavBar({ token = false }) {
+import { UserContext } from "../../context/UserContext";
+export default function NavBar() {
 
   const { total  } = useContext(CartContext);
+  const { logout, token } = useContext(UserContext);
 
   return (
     <div className="navbar-contenedor">
@@ -22,7 +24,7 @@ export default function NavBar({ token = false }) {
               <Link to="/pizzeria.mammamia.github.io/profile">
                 <Button variant="outline-light">Profile</Button>
               </Link>
-              <Button variant="outline-light">Logout</Button>
+              <Button onClick={logout} variant="outline-light">Logout</Button>
             </>
           ) : (
             <>
