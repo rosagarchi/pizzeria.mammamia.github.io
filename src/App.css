@@ -198,3 +198,10 @@ html, body {
   justify-content: center;
   gap: 2rem;
 }
+
+.contenedorpizza {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+}

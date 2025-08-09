@@ -6,6 +6,8 @@ import Home from "./Home";
 import Footer from "./componentes/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Cart from "./Cart"
+import Pizza from "./Pizza";
+
 
 //import Registro from "./Registro";
 //import Login from "./Login";
@@ -17,9 +19,10 @@ function App() {
     <>
       <NavBar />
       {/*<Registro/>*/}
-      {/*<Home />*/}
-      <Cart/>
+      {/* <Home />*/}
+      {/*<Cart/>*/}
       {/*<Login />*/}
+      <Pizza/>
       <Footer />
     </>
   );
