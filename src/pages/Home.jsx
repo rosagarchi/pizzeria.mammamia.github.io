@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Header from "./componentes/Header";
-import CardPizza from "./componentes/CardPizza/CardPizza";
+import Header from "../componentes/Header";
+import CardPizza from "../componentes/CardPizza/CardPizza";
 //import { pizzas } from "./assets/js/pizzas";
 
 const urlApi = 'http://localhost:5000/api/pizzas'

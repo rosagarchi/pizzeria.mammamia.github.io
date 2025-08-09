@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import { formatoMoneda } from "../../utils/utils";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function NavBar({ token = false, total = 0 }) {
   return (
@@ -10,25 +11,34 @@ export default function NavBar({ token = false, total = 0 }) {
       </div>
       <div className="menu">
         <div className="navbar-contenedor-botones">
-          <Button variant="outline-light">Home</Button>
-
+          <Link to="/pizzeria.mammamia.github.io/">
+            <Button variant="outline-light">Home</Button>
+          </Link>
           {token ? (
             <>
-              <Button variant="outline-light">Profile</Button>
+              <Link to="/pizzeria.mammamia.github.io/profile">
+                <Button variant="outline-light">Profile</Button>
+              </Link>
               <Button variant="outline-light">Logout</Button>
             </>
           ) : (
             <>
-              <Button variant="outline-light">Login</Button>
-              <Button variant="outline-light">Register</Button>
+              <Link to="/pizzeria.mammamia.github.io/login">
+                <Button variant="outline-light">Login</Button>
+              </Link>
+              <Link to="/pizzeria.mammamia.github.io/register">
+                <Button variant="outline-light">Register</Button>
+              </Link>
             </>
           )}
         </div>
 
         <div className="navbar-contenedor-total">
-          <Button variant="outline-primary">
-            Total: ${formatoMoneda(total)}
-          </Button>
+          <Link to="/pizzeria.mammamia.github.io/cart">
+            <Button variant="outline-primary">
+              Total: ${formatoMoneda(total)}
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

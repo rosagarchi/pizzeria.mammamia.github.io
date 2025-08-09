@@ -205,3 +205,21 @@ html, body {
   justify-content: center;
   margin: 5rem;
 }
+
+.contenedorProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rem;
+  flex-direction: column;
+  
+  & button {
+    margin-top: 20px;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(75, 114, 254);
+    border-color: rgba(255, 255, 255, 0);
+    padding: 8px;
+
+  }
+}

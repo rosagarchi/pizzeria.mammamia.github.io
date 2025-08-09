@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Container, Button } from 'react-bootstrap'
-import { pizzaCart } from './assets/js/pizzas'
+import { pizzaCart } from '../assets/js/pizzas'
 
 export default function Cart() {
 

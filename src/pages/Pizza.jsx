@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CardPizza from "./componentes/CardPizza/CardPizza";
+import CardPizza from "../componentes/CardPizza/CardPizza";
 
 const urlApi = "http://localhost:5000/api/pizzas/p001";
 
