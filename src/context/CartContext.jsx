@@ -1,10 +1,14 @@
 import { useContext, createContext, useState, useEffect } from "react";
+import { UserContext } from "./UserContext";
 
 export const CartContext = createContext();
+
+const urlApi = "http://localhost:5000/api/checkouts";
 
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const { token } = useContext(UserContext);
 
   const calcularTotal = () => {
     if (cart.length) {
@@ -49,12 +53,40 @@ export function CartProvider({ children }) {
     );
   };
 
+  const pagar = () => {
+
+    fetch(urlApi, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify({
+        cart,
+      }),
+    })
+      .then((respuesta) => {
+        if (!respuesta.ok) {
+          throw new Error(`Error HTTP: ${respuesta.status}`);
+        }
+        return respuesta.json();
+      })
+      .then((data) => {
+        alert('Compra realizada con exito!.')
+      })
+      .catch((error) => {
+        alert("Error de credenciales");
+      });
+  };
+
   useEffect(() => {
     calcularTotal();
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, agregarPizza, total, aumentar, disminuir }}>
+    <CartContext.Provider
+      value={{ cart, agregarPizza, total, aumentar, disminuir, pagar }}
+    >
       {children}
     </CartContext.Provider>
   );

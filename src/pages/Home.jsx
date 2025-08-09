@@ -36,6 +36,7 @@ export default function Home() {
                id={pizza.id}
                ingredients={pizza.ingredients}
                agregar={(pizzaSeleccionada) => agregarPizza(pizzaSeleccionada)}
+               detalleVisible={true}
         />  
         })}
       </div>

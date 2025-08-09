@@ -17,8 +17,6 @@ import { useContext } from "react";
 function App() {
   const { token } = useContext(UserContext);
 
-  console.log(" ---->", token);
-
   return (
     <CartProvider>
       <Router>

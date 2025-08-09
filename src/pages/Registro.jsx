@@ -7,19 +7,44 @@ export default function Registro() {
   const [contrasena, setContrasena] = useState("");
   const [repetirContrasena, setRepetirContrasena] = useState("");
 
+  const urlApi = "http://localhost:5000/api/auth/register";
+
   const registrar = () => {
-    if (email.trim() === '' || contrasena.trim() === '' || repetirContrasena.trim() === '') {
-        alert('Debe completar todos los campos.')
+    if (
+      email.trim() === "" ||
+      contrasena.trim() === "" ||
+      repetirContrasena.trim() === ""
+    ) {
+      alert("Debe completar todos los campos.");
     } else if (contrasena.length < 6) {
-        alert('La contraseña debe tener al menos 6 caracteres.')
-        return false;
-    } else if (contrasena.trim() !== repetirContrasena.trim()){
-        alert('Las contraseñas no coinciden.')
-        return false;
+      alert("La contraseña debe tener al menos 6 caracteres.");
+      return false;
+    } else if (contrasena.trim() !== repetirContrasena.trim()) {
+      alert("Las contraseñas no coinciden.");
+      return false;
     } else {
-        alert('Registro completado!');
+      fetch(urlApi, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          password: contrasena,
+        }),
+      })
+        .then((respuesta) => {
+          if (!respuesta.ok) {
+            throw new Error(`Error HTTP: ${respuesta.status}`);
+          }
+          return respuesta.json();
+        })
+        .then(() => {
+          alert('Registro exitoso.');
+        })
+        .catch((error) => {
+          alert("Error de datos");
+        });
     }
-  }
+  };
 
   return (
     <div className="registro-contenedor">

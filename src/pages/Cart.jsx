@@ -6,9 +6,9 @@ import { UserContext } from '../context/UserContext';
 
 export default function Cart() {
 
-  const { total, cart, aumentar, disminuir } = useContext(CartContext);
-  const { token } = useContext(UserContext);
-
+  const { total, cart, aumentar, disminuir, pagar } = useContext(CartContext);
+  const { login} = useContext(UserContext);
+  
 
   return (
      <Container style={{ marginBottom: '5rem', width: '700px'}}>
@@ -54,7 +54,7 @@ export default function Cart() {
 
         <Row>
             <Col>
-                <Button variant='dark' disabled={!token}>Pagar</Button>
+                <Button onClick={pagar} variant='dark' disabled={!login}>Pagar</Button>
             </Col>
         </Row>
         

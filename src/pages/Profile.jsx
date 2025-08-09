@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 
 
 export default function Profile() {
 
+  const { user, logout } =  useContext(UserContext);
   return (
     <div className="contenedorProfile">
-        <div>rosadgarcia91@gmail.com</div>
-        <div><button>Cerrar sesion</button></div>
+        <div>{user.email}</div>
+        <div><button onClick={logout}>Cerrar sesion</button></div>
     </div>
   );
 }
