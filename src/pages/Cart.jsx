@@ -1,30 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Row, Col, Container, Button } from 'react-bootstrap'
 import { pizzaCart } from '../assets/js/pizzas'
+import { CartContext } from '../context/CartContext';
 
 export default function Cart() {
 
-    const [cart, setCart] = React.useState(pizzaCart);
+  const { total, cart, aumentar, disminuir } = useContext(CartContext);
 
-    const calcularTotal = (cart) => {
-    return cart.reduce((total, pizza) => total + (pizza.price * pizza.count), 0);
-    };
-
-    const aumentar = (id) => {
-        setCart(cart.map(p => p.id === id ? { ...p, count: p.count + 1 } : p));
-    };
-
-    const disminuir = (id) => {
-        setCart(prevCart => 
-         prevCart.map(p => {
-        if (p.id === id) {
-            if (p.count === 1) return p;
-            return { ...p, count: p.count - 1 };
-        }
-      return p;
-    })
-  );
-};
 
   return (
      <Container style={{ marginBottom: '5rem', width: '700px'}}>
@@ -63,7 +45,7 @@ export default function Cart() {
 
         <Row>
             <Col>
-                <h4>Total: ${calcularTotal(cart)}</h4>
+                <h4>Total: ${total}</h4>
             </Col>
         </Row>
 

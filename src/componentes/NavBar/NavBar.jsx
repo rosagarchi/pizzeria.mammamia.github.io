@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import { formatoMoneda } from "../../utils/utils";
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
+export default function NavBar({ token = false }) {
 
-export default function NavBar({ token = false, total = 0 }) {
+  const { total  } = useContext(CartContext);
+
   return (
     <div className="navbar-contenedor">
       <div className="navbar-titulo">

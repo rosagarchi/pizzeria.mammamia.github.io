@@ -10,11 +10,12 @@ import Registro from "./pages/Registro";
 import Login from './pages/Login';
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
 
   return (
-    <>
+    <CartProvider>
       <Router>
       <NavBar />
         <Routes>
@@ -28,7 +29,7 @@ function App() {
         </Routes>
       </Router>
       <Footer />
-    </>
+    </CartProvider>
   );
 }
 

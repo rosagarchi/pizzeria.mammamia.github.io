@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { formatoMoneda } from '../../utils/utils';
 
-export default function CardPizza({ name, price, ingredients, img }) {
+export default function CardPizza({ name, price, ingredients, img,id, agregar }) {
   return (
     <Card style={{ width: '18rem' }}>
         <Card.Img variant="top" src={img} />
@@ -24,7 +24,14 @@ export default function CardPizza({ name, price, ingredients, img }) {
             </div>
             <div className="card-botones">
                 <Button variant="outline-dark">Ver Más</Button>
-                <Button variant="dark">Añadir</Button>
+                <Button variant="dark" onClick={() => agregar({
+                    name,
+                    price,
+                    ingredients,
+                    img,
+                    id,
+                    count: 1,
+                })}>Añadir</Button>
             </div>
         </div>
         </Card.Body>
